@@ -4,7 +4,7 @@
 # - AZURE_CLIENT_ID: The Azure Service Principal's Application (client) ID. It is used for authenticating with the Azure Container Registry.
 # - AZURE_CLIENT_SECRET: The Azure Service Principal's Secret. It is used along with the AZURE_CLIENT_ID for authentication.
 # - AZURE_ACR_ENDPOINT: The login server name of your Azure Container Registry. This is the URL where the Docker images will be pushed to.
-#
+# # 
 # You can create these secrets in your GitHub repository's settings under the "Secrets" section.
   
 name: WebApp Demo
