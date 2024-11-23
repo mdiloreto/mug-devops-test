@@ -19,7 +19,6 @@ def test_translate_valid_translator():
     }
     response = requests.post(f"{ENDPOINT}/api/translate", json=payload, timeout=10)
     assert response.status_code == 200, f"Expected 200, but got {response.status_code}. Response: {response.text}"
-
     
     # Poll the translation status
     translation_id = response.json().get("translation_id")  # Assuming API returns a job ID
