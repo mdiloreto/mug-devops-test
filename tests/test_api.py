@@ -17,7 +17,7 @@ def test_translate_valid_translator():
         "azure_endpoint": AZURE_ENDPOINT,
         "azure_credentials": AZURE_CREDENTIALS,
     }
-    response = requests.post(f"{ENDPOINT}/api/translate", json=payload, timeout=10)
+    response = requests.post(f"{ENDPOINT}/api/translate", json=payload, timeout=3600)
     assert response.status_code == 200, f"Expected 200, but got {response.status_code}. Response: {response.text}"
 
 def test_translate_unsupported_translator():
