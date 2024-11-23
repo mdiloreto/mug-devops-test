@@ -9,7 +9,8 @@ on:
 env:
   IMAGE_NAME_main: mbwebapp-main
   IMAGE_NAME_dev: mbwebapp-dev
-
+  AZURE_ENDPOINT: ${{ secrets.AZURE_ENDPOINT }}
+  AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
 jobs:
   unit-test:
     name: Run Unit Tests
