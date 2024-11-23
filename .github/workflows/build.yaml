@@ -9,8 +9,8 @@ on:
 env:
   IMAGE_NAME_main: mbwebapp-main
   IMAGE_NAME_dev: mbwebapp-dev
-  AZURE_ENDPOINT: ${{ secrets.AZURE_ENDPOINT }}
-  AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+  AZURE_ENDPOINT: ${{ secrets.TEST_AZURE_ENDPOINT }}
+  AZURE_CREDENTIALS: ${{ secrets.TEST_AZURE_CREDENTIALS }}
   TEST_ENDPOINT: ${{ vars.TEST_ENDPOINT }}
   TEST_URL: ${{ vars.TEST_URL }}
 
@@ -51,6 +51,9 @@ jobs:
             echo "TEST_URL=$TEST_URL"
             echo "AZURE_ENDPOINT=$AZURE_ENDPOINT"
             echo "AZURE_CREDENTIALS=$AZURE_CREDENTIALS"
+
+      - name: Test Azure Endpoint Connectivity
+        run: curl -v ${{ vars.AZURE_ENDPOINT }}
 
       - name: Run Unit Tests
         run: pytest ./tests
