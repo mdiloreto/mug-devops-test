@@ -4,7 +4,7 @@ import requests
 ENDPOINT = os.getenv("TEST_ENDPOINT", "http://localhost:5000")
 AZURE_ENDPOINT = os.getenv("TEST_AZURE_ENDPOINT")
 AZURE_CREDENTIALS = os.getenv("TEST_AZURE_CREDENTIALS")
-URL = os.getenv("ENDPOINT")
+URL = os.getenv("TEST_URL")
 
 def test_translate_missing_body():
     response = requests.post(f"{ENDPOINT}/api/translate", json=None)
