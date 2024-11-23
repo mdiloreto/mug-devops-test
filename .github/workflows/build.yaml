@@ -10,7 +10,7 @@ env:
   IMAGE_NAME_main: mbwebapp-main
   IMAGE_NAME_dev: mbwebapp-dev
   AZURE_ENDPOINT: ${{ secrets.TEST_AZURE_ENDPOINT }}
-  AZURE_CREDENTIALS: ${{ secrets.TEST_AZURE_CREDENTIALS }}
+  TEST_AZURE_CREDENTIALS: ${{ secrets.TEST_AZURE_CREDENTIALS }}
   TEST_ENDPOINT: ${{ vars.TEST_ENDPOINT }}
   TEST_URL: ${{ vars.TEST_URL }}
 
