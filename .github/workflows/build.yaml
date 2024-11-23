@@ -49,8 +49,8 @@ jobs:
         run: |
             echo "TEST_ENDPOINT=$TEST_ENDPOINT"
             echo "TEST_URL=$TEST_URL"
-            echo "AZURE_ENDPOINT=$TEST_AZURE_ENDPOINT"
-            echo "AZURE_CREDENTIALS=$TEST_AZURE_CREDENTIALS"
+            echo "TEST_AZURE_ENDPOINT=$TEST_AZURE_ENDPOINT"
+            echo "TEST_AZURE_CREDENTIALS=$TEST_AZURE_CREDENTIALS"
 
       - name: Run Unit Tests
         run: pytest ./tests
