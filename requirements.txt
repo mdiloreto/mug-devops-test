@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+azure-ai-translation-document
+google-cloud-translate
+flask
+gunicorn
