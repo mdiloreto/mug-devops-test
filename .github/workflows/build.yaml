@@ -43,8 +43,8 @@ jobs:
           tags: |
             ${{ secrets.AZURE_ACR_ENDPOINT }}/${{ env.IMAGE_NAME_main }}:${{ github.sha }}
             ${{ secrets.AZURE_ACR_ENDPOINT }}/${{ env.IMAGE_NAME_main }}:latest
-        build-args: 
-          FLASK_OUTPUT_DIR: /home 
+          build-args: |
+            FLASK_OUTPUT_DIR: /home 
           
   build-dev:
     name: Build-dev
@@ -70,5 +70,5 @@ jobs:
           tags: |
             ${{ secrets.AZURE_ACR_ENDPOINT }}/${{ env.IMAGE_NAME_dev }}:${{ github.sha }}
             ${{ secrets.AZURE_ACR_ENDPOINT }}/${{ env.IMAGE_NAME_dev }}:latest
-        build-args: 
-          FLASK_OUTPUT_DIR: /home 
+          build-args: |
+            FLASK_OUTPUT_DIR: /home 
