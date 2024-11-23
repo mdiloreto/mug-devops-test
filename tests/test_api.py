@@ -17,7 +17,7 @@ def test_translate_valid_translator():
         "azure_endpoint": AZURE_ENDPOINT,
         "azure_credentials": AZURE_CREDENTIALS,
     }
-    response = requests.post(f"{ENDPOINT}/api/translate", json=payload)
+    response = requests.post(f"{ENDPOINT}/api/translate", json=payload, timeout=3600 )
     assert response.status_code == 200, f"Expected 200, but got {response.status_code}"
     assert "output" in response.headers.get("Content-Disposition", ""), "Missing expected output file in response"
 
@@ -26,6 +26,6 @@ def test_translate_unsupported_translator():
         "url": URL,
         "translator_api": "unsupported",
     }
-    response = requests.post(f"{ENDPOINT}/api/translate", json=payload)
+    response = requests.post(f"{ENDPOINT}/api/translate", json=payload, timeout=3600)
     assert response.status_code == 400, f"Expected 400, but got {response.status_code}"
     assert response.json()["error"] == "Translator 'unsupported' not supported by the API.", "Unexpected error message"
