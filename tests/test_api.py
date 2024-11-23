@@ -6,10 +6,6 @@ AZURE_ENDPOINT = os.getenv("TEST_AZURE_ENDPOINT")
 AZURE_CREDENTIALS = os.getenv("TEST_AZURE_CREDENTIALS")
 URL = os.getenv("TEST_URL", "https://madsblog.net/2024/10/29/kubernetes-networking-parte-2/")
 
-# Ensure critical variables are set.
-if not AZURE_ENDPOINT or not AZURE_CREDENTIALS or not URL:
-    raise ValueError("Missing critical environment variables: AZURE_ENDPOINT, AZURE_CREDENTIALS, or URL")
-
 def test_translate_missing_body():
     response = requests.post(f"{ENDPOINT}/api/translate", json=None)
     assert response.status_code == 500, f"Expected 500, but got {response.status_code}"

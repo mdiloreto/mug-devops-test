@@ -41,8 +41,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r ./tests/requirements.txt
 
-      - name: Run Unit Tests
-        run: pytest ./tests
+          - name: Run Unit Tests
+          env:
+            TEST_ENDPOINT: ${{ vars.TEST_ENDPOINT }}
+            TEST_URL: ${{ vars.TEST_URL }}
+          run: pytest ./tests
 
   build-main:
     name: Build-main
